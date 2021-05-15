@@ -5,6 +5,7 @@
 #if !defined Y_@@@@_HEADER
 
 	#include "core\header"
+	#include "logger\header"
 
 	#include "RP\RP"
 
@@ -12,6 +13,7 @@
 #elseif !defined Y_@@@@_END
 
 	#include "core\impl"
+	#include "logger\impl"
 
 	#include "RP\RP"
 
