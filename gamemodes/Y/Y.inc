@@ -6,6 +6,8 @@
 
 	#include "core\header"
 	#include "logger\header"
+	#include "mysql\header"
+	#include "chat\header"
 
 	#include "RP\RP"
 
@@ -14,6 +16,8 @@
 
 	#include "core\impl"
 	#include "logger\impl"
+	#include "mysql\impl"
+	#include "chat\impl"
 
 	#include "RP\RP"
 

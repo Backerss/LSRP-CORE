@@ -5,4 +5,19 @@ entry: gamemodes\script.pwn
 output: gamemodes\script.amx
 dependencies:
 - sampctl/samp-stdlib
+- pawn-lang/YSI-Includes
+- pBlueG/SA-MP-MySQL
+- Y-Less/sscanf
+- Sreyas-Sreelal/samp-bcrypt:0.2.3
+- Southclaws/samp-logger
+- PatrickGTR/MySQL-Prepared-Statements
+- aktah/cec
+- kristoisberg/samp-map-zones
+- samp-incognito/samp-streamer-plugin
+- oscar-broman/strlib
+- oscar-broman/samp-weapon-config
 local: true
+builds:
+- name: dev
+  includes:
+  - legacy
