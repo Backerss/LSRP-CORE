@@ -1,0 +1,8 @@
+site: ""
+user: aktah
+repo: Y-Core
+entry: gamemodes\script.pwn
+output: gamemodes\script.amx
+dependencies:
+- sampctl/samp-stdlib
+local: true

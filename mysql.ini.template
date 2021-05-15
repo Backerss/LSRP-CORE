@@ -1,0 +1,6 @@
+hostname	= 127.0.0.1
+username	= username
+password	= password
+database	= dbname
+multi_statements = true
+pool_size = 5
