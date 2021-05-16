@@ -50,6 +50,7 @@ hook OnGameModeInit()
 
 hook OnPlayerConnect(playerid)
 {
+    Character_ID[playerid] = -1;
     Character_Nums[playerid] = 0;
     return 1;
 }
@@ -195,11 +196,12 @@ public Character_ValidName(const string[])
 }
 
 Character_InsertToDatabase(playerid, const name[]) {
-    inline const OnCharacterCreated() {
-        Player_SetCharacterID(playerid, cache_insert_id());
+    inline const Handle() {
+        new cID = cache_insert_id();
+        Player_SetCharacterID(playerid, cID);
         CreateCharacterStats(playerid);
         
-        CallLocalFunction("OnCharacterCreated", "i", playerid);
+        CallLocalFunction("OnCharacterCreated", "ii", playerid, cID);
     }
 
     new
@@ -208,7 +210,7 @@ Character_InsertToDatabase(playerid, const name[]) {
 
     MySQL_BindInt(stmt_insertPlayerCharacter, 0, Player_GetAccountID(playerid));
     MySQL_Bind(stmt_insertPlayerCharacter, 1, character_name);
-    MySQL_ExecuteThreaded_Inline(stmt_insertPlayerCharacter, using inline OnCharacterCreated);
+    MySQL_ExecuteThreaded_Inline(stmt_insertPlayerCharacter, using inline Handle);
 }
 
 Character_GetCount(playerid)
