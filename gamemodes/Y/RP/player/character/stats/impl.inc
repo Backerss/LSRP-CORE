@@ -131,11 +131,10 @@ static Character_LoadStats(playerid) {
                 Logger_P(playerid)
             );
 
-            // TODO: ÃÑºÂÈ dev
-            /*if (isDeveloper == 1)
+            if (isDeveloper == 1)
             {
                 Admin_SetPlayerDeveloper(playerid, true);
-            }*/
+            }
 
             Player_GiveKill(playerid, kills);
             Player_SetDeaths(playerid, deaths);

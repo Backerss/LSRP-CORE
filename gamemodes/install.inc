@@ -32,6 +32,10 @@ hook OnMySQLSetupTable() {
     // It's a magic
     // --------------------------------------------------------------------------------------------
  
+     // Admin accounts table.
+    mysql_tquery_file(MySQL_GetHandle(), "db/admins.sql");
+    Logger_Log("setting up 'admins' table...");
+
      // bans table.
     mysql_tquery_file(MySQL_GetHandle(), "db/bans.sql");
     Logger_Log("setting up 'bans' table...");
