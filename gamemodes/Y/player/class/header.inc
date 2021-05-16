@@ -2,4 +2,4 @@
 	#undef _inc_header
 #endif
 
-#define Y_RP_DEFAULT_PLAYER_COLOR	Y_WHITE
+#include <YSI_Coding\y_timers>

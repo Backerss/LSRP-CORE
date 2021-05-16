@@ -9,6 +9,10 @@
 // Set to true if table aren't set up.
 #define SETUP_TABLE 			(true)
 
+// MySQL Prepared Statement
+#define MYSQL_PREPARE_DEBUG 	(false)
+#define MAX_STATEMENTS          100
+
 // Server Settings
 #define SERVER_NAME 			"Southwood Roleplay"
 #define SERVER_ALIAS            "SWRP"
@@ -17,7 +21,7 @@
 #define SERVER_WEBSITE			"sw-rp.com"
 
 #define SCRIPT_VERSION_MAJOR	1
-#define SCRIPT_VERSION_MINOR	0
+#define SCRIPT_VERSION_MINOR	1
 #define SCRIPT_VERSION_PATCH	0
 
 // BCrypt

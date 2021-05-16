@@ -6,3 +6,4 @@
 #include "auth\header"
 #include "account\header"
 #include "admin\header"
+#include "character\header"

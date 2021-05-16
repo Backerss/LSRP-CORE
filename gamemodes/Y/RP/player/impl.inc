@@ -6,3 +6,4 @@
 #include "auth\impl"
 #include "account\impl"
 #include "admin\impl"
+#include "character\impl"

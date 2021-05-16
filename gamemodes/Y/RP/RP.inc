@@ -6,12 +6,14 @@
 
 	#include "core\header"
 	#include "player\header"
+	#include "utils\header"
 
 	#define Y_RP_HEADER
 #elseif !defined Y_RP_END
 
 	#include "core\impl"
 	#include "player\impl"
+	#include "utils\impl"
 
 	#define Y_RP_END
 #else
