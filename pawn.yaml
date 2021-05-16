@@ -1,11 +1,11 @@
 site: ""
 user: aktah
 repo: Y-Core
-entry: gamemodes\script.pwn
-output: gamemodes\script.amx
+entry: gamemodes/script.pwn
+output: gamemodes/script.amx
 dependencies:
 - sampctl/samp-stdlib
-- pawn-lang/YSI-Includes
+- pawn-lang/YSI-Includes:v5.05.0301
 - pBlueG/SA-MP-MySQL
 - Y-Less/sscanf
 - Sreyas-Sreelal/samp-bcrypt:0.2.3
