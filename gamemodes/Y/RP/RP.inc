@@ -7,6 +7,8 @@
 	#include "core\header"
 	#include "player\header"
 	#include "utils\header"
+	#include "features\header"
+	#include "systems\header"
 
 	#define Y_RP_HEADER
 #elseif !defined Y_RP_END
@@ -14,6 +16,8 @@
 	#include "core\impl"
 	#include "player\impl"
 	#include "utils\impl"
+	#include "features\impl"
+	#include "systems\impl"
 
 	#define Y_RP_END
 #else
