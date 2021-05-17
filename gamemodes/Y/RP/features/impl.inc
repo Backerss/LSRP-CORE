@@ -2,4 +2,5 @@
 	#undef _inc_impl
 #endif
 
-#include <YSI_Coding\y_hooks>
+#include "faction\impl"
+#include "graffiti\impl"

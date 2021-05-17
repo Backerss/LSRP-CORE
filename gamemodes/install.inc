@@ -21,6 +21,26 @@ hook OnMySQLSetupTable() {
     Logger_Log("setting up 'character stats' table...");
 
     // --------------------------------------------------------------------------------------------
+    // Factions
+    // --------------------------------------------------------------------------------------------
+
+    mysql_tquery_file(MySQL_GetHandle(), "db/rp_factions.sql");
+    Logger_Log("setting up 'factions' table...");
+
+    mysql_tquery_file(MySQL_GetHandle(), "db/rp_faction_ranks.sql");
+    Logger_Log("setting up 'faction ranks' table...");
+
+    mysql_tquery_file(MySQL_GetHandle(), "db/rp_faction_members.sql");
+    Logger_Log("setting up 'faction members' table...");
+
+    mysql_tquery_file(MySQL_GetHandle(), "db/rp_faction_spawn.sql");
+    Logger_Log("setting up 'faction spawn' table...");
+
+    mysql_tquery_file(MySQL_GetHandle(), "db/rp_graffitis.sql");
+    Logger_Log("setting up 'graffitis' table...");
+
+
+    // --------------------------------------------------------------------------------------------
     // Utils
     // --------------------------------------------------------------------------------------------
  

@@ -9,6 +9,9 @@
 #include <YSI_Extra\y_inline_mysql>
 #include <mysql_prepared>
 
+#define INVALID_DB_ID DBID:0
+static stock DBID:__DBID__;
+
 new MySQL:MySQL_gHandle;
 
 stock MySQL:MySQL_GetHandle()
