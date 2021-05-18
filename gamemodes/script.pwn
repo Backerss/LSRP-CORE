@@ -19,12 +19,11 @@
 #define YSI_NO_MODE_CACHE
 
 // Libraries
-#include "streamer"
-#include "sscanf2"
-#include "strlib"
-
-#include "Pawn.RakNet"
-#include "cec"
+#include <streamer>
+#include <sscanf2>
+#include <strlib>
+#include <Pawn.RakNet>
+#include <cec>
 
 // Legacy Includes
 
