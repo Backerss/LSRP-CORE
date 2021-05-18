@@ -16,7 +16,15 @@ dependencies:
 - samp-incognito/samp-streamer-plugin
 - oscar-broman/strlib
 - oscar-broman/samp-weapon-config
+- maddinat0r/samp-discord-connector
 local: true
+runtime:
+  version: 0.3.7
+  mode: server
+  rcon_password: password
+  port: 7777
+  extra:
+    discord_bot_token: ODQzODk3NTQ5ODA2MTA4Njkz.YKKi1g.iuWr7Z5p37OS7lXEYLyWiVBa-Yo
 builds:
 - name: dev
   includes:

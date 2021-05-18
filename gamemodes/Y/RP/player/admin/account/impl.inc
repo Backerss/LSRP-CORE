@@ -180,7 +180,27 @@ stock SendAdminMsg(E_ADMIN_MSG:type, level, const msg[]) {
 			color = X11_YELLOW1;
 			format(out, sizeof out, "AdmWarning: %s", msg);
 		}
+        default: {
+            strcpy(out, msg);
+        }
 	}
+
+    new szMsgWithoutColor[2048];
+    strcpy(szMsgWithoutColor, out);
+    StripColorEmbedding(szMsgWithoutColor);
+
+    if (type == ADMIN_MSG_WARNING)
+    {
+        SendDiscordMessage(1, szMsgWithoutColor);
+    }
+    else if (type == ADMIN_MSG_INFO)
+    {
+        SendDiscordMessage(0, szMsgWithoutColor);
+    }
+    else
+    {
+        SendDiscordMessage(2, szMsgWithoutColor);
+    }
 
     foreach(new i:GroupMember(AdminGroup[level - 1]))
 	{

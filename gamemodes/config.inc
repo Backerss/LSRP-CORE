@@ -29,3 +29,6 @@
 
 // MySQL
 #define MYSQL_CHARSET           "tis620"
+
+// Discord
+#define USING_DISCORD

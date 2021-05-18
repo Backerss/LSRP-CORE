@@ -8,6 +8,7 @@ hook OnGameModeInit()
 {
     Command_AddAlt(YCMD:setadminlevel, "sal");
 	Command_AddAlt(YCMD:adminhelp, "ahelp");
+    Command_AddAlt(YCMD:adminchat, "a");
 }
 
 hook OnGroupInit()
@@ -16,6 +17,9 @@ hook OnGroupInit()
 	{
 		@YCMD:adminhelp;
 		@YCMD:ahelp;
+
+        @YCMD:adminchat;
+        @YCMD:a;
 
         @YCMD:aduty;
 	}
@@ -65,6 +69,17 @@ YCMD:adminhelp(playerid, params[], help)
 	if (Admin_IsPlayerAdminLevel(playerid, Y_PLAYER_ADMIN_MAX_LEVEL)) {
 		SendClientMessage(playerid, X11_SKYBLUE,"/setadminlevel");
 	}
+
+    return 1;
+}
+
+YCMD:adminchat(playerid, params[], help)
+{
+
+    if(isnull(params)) 
+        return SendSyntaxMsg(playerid, "/adminchat <ข้อความ>");
+
+    SendAdminMsgF(E_ADMIN_MSG:0, 1, "(Admin) %s(%i): "WHITE"%s", Player_GetCharacterName(playerid), playerid, params);
 
     return 1;
 }

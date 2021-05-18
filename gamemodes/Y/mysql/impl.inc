@@ -6,17 +6,23 @@
 
 public OnQueryError(errorid, const error[], const callback[], const query[], MySQL:handle)
 {
+	new errorQuery[1024];
 	switch(errorid) {
-		case 1136: printf("[MySQL] Error 1136 | Column count does not match value count => \"%s\"", query);
-		case 1054: printf("[MySQL] Error 1054 | Invalid field name => \"%s\"", query);
-		case 1065: printf("[MySQL] Error 1065 | Query was empty (variable's size too small?) => \"%s\" from \"%s\"", query, callback);
-		case 1058: printf("[MySQL] Error 1058 | Column count doesn't match value count => \"%s\" from \"%s\"", query, callback);
-		case 1203: printf("[MySQL] Error 1203 | User already has more than 'max_user_connections' active connections => \"%s\" from \"%s\"", query, callback);
-		case 1045: printf("[MySQL] Error 1045 | Access denied");
-		case ER_SYNTAX_ERROR: printf("[MySQL] Syntax Error => \"%s\"",query);
+		case 1136: format(errorQuery, sizeof(errorQuery), "[MySQL] Error 1136 | Column count does not match value count => \"%s\"", query);
+		case 1054: format(errorQuery, sizeof(errorQuery), "[MySQL] Error 1054 | Invalid field name => \"%s\"", query);
+		case 1065: format(errorQuery, sizeof(errorQuery), "[MySQL] Error 1065 | Query was empty (variable's size too small?) => \"%s\" from \"%s\"", query, callback);
+		case 1058: format(errorQuery, sizeof(errorQuery), "[MySQL] Error 1058 | Column count doesn't match value count => \"%s\" from \"%s\"", query, callback);
+		case 1203: format(errorQuery, sizeof(errorQuery), "[MySQL] Error 1203 | User already has more than 'max_user_connections' active connections => \"%s\" from \"%s\"", query, callback);
+		case 1045: format(errorQuery, sizeof(errorQuery), "[MySQL] Error 1045 | Access denied");
+		case ER_SYNTAX_ERROR: format(errorQuery, sizeof(errorQuery), "[MySQL] Syntax Error => \"%s\"",query);
 
-		default : printf("[MySQL] Error %d | Callback: %s | \"%s\"", errorid, callback, query);
+		default : format(errorQuery, sizeof(errorQuery), "[MySQL] Error %d | Callback: %s | \"%s\"", errorid, callback, query);
 	}
+
+	SendDiscordMessage(3, errorQuery);
+
+	Logger_Log("MySQL Error", Logger_S("msg", errorQuery));
+
 	return 1;
 }
 
