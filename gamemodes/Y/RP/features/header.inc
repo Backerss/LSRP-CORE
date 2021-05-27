@@ -4,3 +4,4 @@
 
 #include "faction\header"
 #include "graffiti\header"
+#include "information\header"

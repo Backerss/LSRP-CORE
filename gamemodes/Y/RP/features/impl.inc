@@ -4,3 +4,4 @@
 
 #include "faction\impl"
 #include "graffiti\impl"
+#include "information\impl"
